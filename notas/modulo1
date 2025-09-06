@@ -1,0 +1,129 @@
+**VISÃO GERAL DA AWS**
+
+Introdução:
+
+- A Amazon foi fundada como uma loja de livros na internet em 1994 por Jeff Bezos.
+- O nome “Amazon” foi escolhido em homenagem ao maior rio do mundo: o Rio Amazonas.
+- A AWS (Amazon Web Services) é o grupo que criou todos os recursos computacionais por trás da Amazon Marketplace, oferecendo serviços de infraestrutura em nuvem desde 2006.
+
+**Infraestrutura Global da AWS:**
+
+- Mais de 200 serviços disponíveis mundialmente.
+- Não é necessário configurar ou comprar máquinas físicas.
+- Latência aumenta conforme a distância entre o servidor e o usuário, pois os dados percorrem mais caminho e passam por mais equipamentos.
+- Rede global de data centers organizada em Regions e Availability Zones (AZs).
+
+**Regions:**
+
+- Região = local geográfico com datacenters. Ex.: São Paulo, Virgínia (EUA), Frankfurt (Alemanha).
+- Cada região é isolada das outras → problemas em uma não afetam outra.
+
+Benefícios:
+
+- Reduz latência (proximidade do usuário).
+- Cumpre requisitos legais de armazenamento de dados.
+- Resiliência contra desastres.
+
+**Availability Zones (AZs):**
+
+Cada região possui várias AZs. Cada AZ = 1 ou mais datacenters fisicamente separados, mas conectados logicamente.
+
+Benefícios:
+
+-Alta disponibilidade → falha em um datacenter não afeta o serviço.
+- Redundância e backup.
+- Escalabilidade.
+
+Como funciona na prática:
+
+- Multitenancy: Vários clientes compartilham o mesmo datacenter, mas isolados.
+- Alta disponibilidade e escalabilidade: AWS aloca mais recursos conforme necessidade sem afetar outros clientes.
+- Cada região precisa ter mínimo 2 AZs (geralmente 3 ou mais).
+
+**Modelo de Negócio da AWS:**
+
+- Pagamento por uso (Opex) ao invés de comprar infraestrutura (Capex).
+- Flexível, escalável e pronto para iniciar projetos sem alto investimento inicial.
+- Grande variedade de serviços: computação, armazenamento, banco de dados, machine learning, IoT, análise de dados.
+
+**Modelos:**
+
+Privado → alto investimento, custo maior.
+Público → maior risco de privacidade, escalável, baixo custo.
+Híbrido → combina público e privado.
+
+**Modelos de Computação na Nuvem:**
+
+- IaaS (Infrastructure as a Service) – Infraestrutura como Serviço:
+- Entrega máquinas virtuais, rede, armazenamento e servidores.
+- Usuário controla o sistema operacional, instala aplicativos e gerencia tudo.
+Exemplos: AWS EC2, Amazon S3, Azure Virtual Machines, Google Compute Engine.
+
+-Ideal quando você precisa de controle total do servidor e banco de dados.
+
+**PaaS (Platform as a Service) – Plataforma como Serviço:**
+- Ambiente pronto para rodar aplicações, sem se preocupar com servidores.
+- Foco no código da aplicação.
+Exemplos: AWS Elastic Beanstalk, Google App Engine, Heroku, Azure App Service.
+- Ideal quando você quer subir o aplicativo sem gerenciar a infraestrutura.
+
+**SaaS (Software as a Service) – Software como Serviço:**
+
+- Software pronto, acessível via internet.
+- Usuário só consome o serviço.
+Exemplos: Gmail, Google Drive, Dropbox, Salesforce, Microsoft 365.
+- Ideal quando você quer usar o software sem se preocupar com servidores ou manutenção.
+
+Resumo em uma frase:
+
+IaaS: Aluga infraestrutura (máquinas, discos, rede).
+
+PaaS: Aluga plataforma (foco no código).
+
+SaaS: Software pronto para uso.
+
+Exemplo Lúdico:
+
+IaaS: recebe blocos de Lego e monta tudo sozinho.
+
+PaaS: recebe uma casinha pronta e apenas monta o que falta.
+
+SaaS: recebe a casinha pronta e decorada, só usa.
+
+**CONCEITOS FUNDAMENTAIS**
+
+- Regions: isoladas, compostas por 2 ou mais AZs.
+
+- Availability Zones: independentes, redundantes e escaláveis.
+
+- Serviços gerenciados: suportam sistemas de grande porte, alta demanda e escalabilidade.
+
+**Exemplos de Serviços:**
+
+Amazon EC2: cria, configura e gerencia servidores virtuais (instâncias).
+
+Amazon S3: armazenamento de arquivos.
+
+Outros: RDS, Lambda, Elastic Beanstalk, etc.
+
+**Observações**
+
+- Prática: Criação de Conta na AWS: Uso da conta root não é recomendado para tarefas diárias.
+- Riscos da conta root: permissões ilimitadas → alto risco; viola o princípio do privilégio mínimo; risco de exposição de credenciais.
+- Solução: IAM (Identity and Access Management): Criar usuários IAM individuais; atribuir apenas as permissões necessárias.
+- Ativar MFA para segurança extra.
+- AWS Console: interface web.
+- AWS CLI: linha de comando.
+- CloudShell: terminal na nuvem para criar serviços.
+
+
+***IAM - Identity and Access Management:**
+
+- Criar usuários e grupos com permissões específicas.
+- Controlar roles e políticas para acesso granular.
+- Uso de tags para organização e controle de custos.
+- Não usar root diariamente.
+- Criar budgets e alertas.
+- Usar IAM Access Analyzer e Trusted Advisor.
+- Considerar conta separada para estudos.
+
